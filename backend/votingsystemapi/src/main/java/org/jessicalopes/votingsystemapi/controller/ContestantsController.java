@@ -7,11 +7,13 @@ import org.jessicalopes.votingsystemapi.repository.ContestantRepo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/contestants")
 @AllArgsConstructor
+@CrossOrigin
 public class ContestantsController {
 
     private final ContestantRepo contestantRepository;
@@ -32,4 +34,10 @@ public class ContestantsController {
         Optional<ContestantModel> optParameter = contestantRepository.findById(id);
         return optParameter.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<ContestantModel>> getAll(){
+        return ResponseEntity.ok(contestantRepository.findAll());
+    }
+
 }

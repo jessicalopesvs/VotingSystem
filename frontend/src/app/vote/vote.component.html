@@ -1,0 +1,11 @@
+<html xmlns="http://www.w3.org/1999/html">
+<form name="voteform">
+
+  <div *ngFor="let c of contestants">
+    <input type="radio" name="voteradio" [value]="c.id"> {{c.name}}
+  </div>
+  <br>
+  <input type="submit" value="Submit vote">
+</form>
+
+</html>

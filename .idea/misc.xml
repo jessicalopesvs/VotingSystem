@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/votingsystemms/pom.xml" />
         <option value="$PROJECT_DIR$/votingsystemapi/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/votingsystemms/pom.xml" />
       </list>
     </option>
   </component>

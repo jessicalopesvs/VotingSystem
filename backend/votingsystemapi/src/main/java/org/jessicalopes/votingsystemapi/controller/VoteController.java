@@ -5,14 +5,12 @@ import lombok.AllArgsConstructor;
 import org.jessicalopes.votingsystemapi.model.ContestantModel;
 import org.jessicalopes.votingsystemapi.service.VoteService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/vote")
 @AllArgsConstructor
+@CrossOrigin
 public class VoteController {
 
     private final VoteService service;
