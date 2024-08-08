@@ -13,6 +13,8 @@ import {Contestant} from "../model/contestant";
 export class ComputeVoteComponent implements OnInit {
   title = 'Test vote component';
   vote: string = '';
+  voteID : string = '';
+
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -21,19 +23,21 @@ export class ComputeVoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeRoute.queryParams.subscribe((params) => {
-      const voteId = params['id'];  // Get the 'id' from the query parameters
-      if (voteId) {
-        this.sendVote(voteId);  // Pass the id to the sendVote method
+      const paramID = params['id'];  // Get the 'id' from the query parameters
+      this.voteID = paramID
+
+      if (paramID) {
+        this.sendVote(paramID);  // Pass the id to the sendVote method
       }
     });
   }
 
   sendVote(id: string) {
-    const request = { id: id };  // Prepare the request payload
+    let request = { id: id };  // Prepare the request payload
 
-    this.service.postData('vote', request).subscribe((response) => {
-      console.log(response);
-      const contestant = response as Contestant;  // Cast the response to Contestant type
+    this.service.postData('/vote', request).subscribe((response) => {
+      console.log('Response' + response);
+      let contestant = response as Contestant;  // Cast the response to Contestant type
       this.vote = contestant.name;  // Update the vote property with the contestant's name
     });
   }
