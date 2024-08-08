@@ -6,7 +6,7 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4.4-green)
 ![Kafka](https://img.shields.io/badge/Kafka-2.8-orange)
 ![Swagger OpenAPI](https://img.shields.io/badge/Swagger%20OpenAPI-3.0-brightgreen)
-![Angular](https://img.shields.io/badge/Angular-brightgreen)
+![Angular](https://img.shields.io/badge/Angular-18.0-brightgreen)
 
 ## Overview
 
