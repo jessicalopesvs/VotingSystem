@@ -14,7 +14,7 @@ import {RestService} from "../service/rest.service";
 })
 export class VoteComponent implements OnInit {
 
-  title = 'Test vote component';
+  title = 'BBBM - Best Boy Band Member ';
   contestants: Contestant [] | undefined;
 
   constructor(private service : RestService) {}
